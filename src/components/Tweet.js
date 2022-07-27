@@ -7,20 +7,21 @@ import Action from "./Action";
 
 function Tweet(props) {
 
-  const {tweet} = props;
+ 
+  const { tweet: { user, timestamp, message } } = props;
 
   return (
     <div className="tweet">
-      <ProfileImage image={tweet.user.image} />
+      <ProfileImage image={user.image} />
 
       <div className="body">
         <div className="top">
-          <User userData = {tweet.user}/>
-          <Timestamp time={tweet.timestamp} />
+          <User userData = {user}/>
+          <Timestamp time={timestamp} />
         </div>
 
         <p className="message">
-        <Message message={tweet.message} /> 
+        <Message message={message} /> 
         </p>
 
         <Action />
